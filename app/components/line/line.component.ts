@@ -2,12 +2,15 @@ import { Component, OnInit } from 'angular2/core';
 import { Line } from '../../model/line';
 import { Destination } from '../../model/destination';
 import { RatpService } from '../../services/ratp.service';
+import { MODAL_PROVIDERS } from '../fuel-ui/Modal/Modal';
+import { COLLAPSE_PROVIDERS } from '../fuel-ui/Collapse/Collapse';
 
 import { Router } from 'angular2/router';
 
 @Component({
   selector: 'my-lines',
-  templateUrl: './app/components/line/line.component.html'
+  templateUrl: './app/components/line/line.component.html',
+  directives: [MODAL_PROVIDERS, COLLAPSE_PROVIDERS]
 })
 export class LineComponent implements OnInit {
   lines: Line[] = [];

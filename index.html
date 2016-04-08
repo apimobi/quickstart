@@ -4,9 +4,9 @@
     <title>Lines</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
     integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7"
-    crossorigin="anonymous">
+    crossorigin="anonymous"> -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="app/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
@@ -14,19 +14,22 @@
     <link href="app/assets/css/jumbotron.css" rel="stylesheet">
     <!-- 1. Load libraries -->
     <!-- index.html -->
-
+    <link rel="stylesheet" href="node_modules/prismjs/themes/prism-coy.css">
+    <script src="node_modules/prismjs/prism.js"></script>
         <!-- IE required polyfills, in this exact order -->
+
     <script src="node_modules/es6-shim/es6-shim.min.js"></script>
     <script src="node_modules/systemjs/dist/system-polyfills.js"></script>
     <script src="node_modules/angular2/es6/dev/src/testing/shims_for_IE.js"></script>
     <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=Intl.~locale.en"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <script src="node_modules/angular2/bundles/http.js"></script>
     <script src="node_modules/ng2-bootstrap/bundles/ng2-bootstrap.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
     <!-- 2. Configure SystemJS -->
     <script>
       System.config({
@@ -35,9 +38,6 @@
             format: 'register',
             defaultExtension: 'js'
           }
-        },
-        map: {
-          moment: 'node_modules/moment/moment.js'
         }
       });
       System.import('app/main')
