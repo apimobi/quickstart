@@ -4,17 +4,24 @@ import { Destination } from '../../model/destination';
 import { RatpService } from '../../services/ratp.service';
 
 import { Router } from 'angular2/router';
+import { CORE_DIRECTIVES, FORM_DIRECTIVES } from 'angular2/common';
+import { ACCORDION_DIRECTIVES }    from 'ng2-bootstrap/ng2-bootstrap';
+
 
 @Component({
   selector: 'my-lines',
-  templateUrl: './app/components/line/line.component.html'
+  templateUrl: './app/components/line/line.component.html',
+  directives : [ACCORDION_DIRECTIVES,CORE_DIRECTIVES, FORM_DIRECTIVES]
 })
 export class LineComponent implements OnInit {
-  lines: Line[] = [];
+  public  oneAtATime:boolean = true;
+  private lines: Line[] = [];
+
   constructor(
     private _router: Router,
     private _ratpService: RatpService) {
   }
+
   ngOnInit() {
     this._ratpService.getLines('rers').subscribe(heroes => this.okResponse(heroes));
     //this._brandalleyService.getProducts('C-1812517-blouses%2c-tuniques/N-12824-univers~femme').subscribe(products => this.okResponse(products));
@@ -46,6 +53,11 @@ export class LineComponent implements OnInit {
 
     }
   }
+
+  public status:Object = {
+    isFirstOpen: false,
+    isFirstDisabled: false
+  };
 
   // gotoDetail(hero: Hero) {
   //   let link = ['HeroDetail', { id: hero.id }];
