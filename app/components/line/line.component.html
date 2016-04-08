@@ -1,0 +1,30 @@
+<h3>Top Lines</h3>
+<div class="grid grid-pad">
+    <!-- <div *ngFor="#line of lines" (click)="gotoDetail(line)" class="col-1-4" > -->
+    <div *ngFor="#line of lines" class="col-1-4" >
+        <div class="module hero">
+            <h4>{{line.name}}</h4>
+            <div *ngFor="#destination of line.destinations" class="col-1-4" >
+              <h4>{{destination.name}}</h4>
+            </div>
+        </div>
+    </div>
+</div>
+<button class="btn btn-primary" (click)="modal.showModal()">Toggle Modal</button>
+<modal #modal
+    modalTitle="Modal Title"
+    closeButton="true"
+    closeOnUnfocus="true">
+    <div class="modal-body">
+        <ul>
+            <li>Any</li>
+            <li>Html</li>
+            <li>Here</li>
+        </ul>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="modal.closeModal()">
+            <i class="fa fa-chevron-left"></i> Go Back
+        </button>
+    </div>
+</modal>
